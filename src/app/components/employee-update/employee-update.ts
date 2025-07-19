@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-employee-update',
-    imports: [CommonModule, FormsModule], // Declare needed modules here
+  imports: [CommonModule, FormsModule], // Declare needed modules here
   templateUrl: './employee-update.html',
   styleUrls: ['./employee-update.css']
 })
