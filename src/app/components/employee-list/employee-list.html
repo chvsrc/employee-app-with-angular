@@ -27,7 +27,8 @@
     <tr>
       <th>Emp ID</th>
       <th>Name</th>
-      <th>Department</th>
+      <th>Department ID</th>
+      <th>Department Name</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -35,6 +36,7 @@
     <tr *ngFor="let emp of employees">
       <td>{{ emp.empId }}</td>
       <td>{{ emp.name }}</td>
+      <td>{{ emp.departmentId }}</td>
       <td>{{ getDepartmentName(emp.departmentId) }}</td>
       <td>
         <button (click)="startUpdate(emp)">Edit</button>

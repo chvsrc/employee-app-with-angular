@@ -22,16 +22,17 @@ export class RestService {
   }
 
   async getEmployees(): Promise<Employee[]> {
-    await this.delay(500);
+    await this.delay(1000);
     return [...this.employees];
   }
 
   async addEmployee(emp: Employee): Promise<void> {
-    await this.delay(300);
+    await this.delay(5000);
     this.employees.push(emp);
   }
 
   async updateEmployee(updatedEmp: Employee): Promise<void> {
+    // debugger;
     await this.delay(300);
     const index = this.employees.findIndex(e => e.empId === updatedEmp.empId);
     if (index > -1) this.employees[index] = updatedEmp;
