@@ -1,1 +1,5 @@
-<p>confirm-dialog works!</p>
+<div class="dialog">
+  <p>{{ message }}</p>
+  <button (click)="confirm.emit()">Yes</button>
+  <button (click)="cancel.emit()">No</button>
+</div>

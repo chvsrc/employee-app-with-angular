@@ -1,1 +1,45 @@
-<p>employee-list works!</p>
+<button (click)="startInsert()">Insert Employee</button>
+
+<app-employee-insert
+  *ngIf="activeComponent === 'insert'"
+  [departments]="departments"
+  (save)="onAdd($event)"
+  (cancel)="cancelAction()">
+</app-employee-insert>
+
+<app-employee-update
+  *ngIf="activeComponent === 'update' && selectedEmp"
+  [emp]="selectedEmp"
+  [departments]="departments"
+  (update)="onUpdate($event)"
+  (cancel)="cancelAction()">
+</app-employee-update>
+
+<app-confirm-dialog
+  *ngIf="activeComponent === 'delete' && selectedEmp"
+  message="Are you sure you want to delete this employee?"
+  (confirm)="confirmDelete()"
+  (cancel)="cancelAction()">
+</app-confirm-dialog>
+
+<table *ngIf="activeComponent === 'list'" border="1">
+  <thead>
+    <tr>
+      <th>Emp ID</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees">
+      <td>{{ emp.empId }}</td>
+      <td>{{ emp.name }}</td>
+      <td>{{ getDepartmentName(emp.departmentId) }}</td>
+      <td>
+        <button (click)="startUpdate(emp)">Edit</button>
+        <button (click)="startDelete(emp)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

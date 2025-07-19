@@ -1,0 +1,13 @@
+.dialog {
+  background: white;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.dialog button {
+  margin: 10px 5px 0 5px;
+}

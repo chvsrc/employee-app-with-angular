@@ -1,1 +1,13 @@
-<p>employee-insert works!</p>
+<div class="form-container">
+  <h3>Insert Employee</h3>
+  <form (ngSubmit)="save.emit(newEmp)">
+    <label>Name: <input [(ngModel)]="newEmp.name" name="name" required></label><br>
+    <label>Department:
+      <select [(ngModel)]="newEmp.departmentId" name="departmentId" required>
+        <option *ngFor="let d of departments" [value]="d.departmentId">{{ d.department }}</option>
+      </select>
+    </label><br>
+    <button type="submit">Save</button>
+    <button type="button" (click)="cancel.emit()">Cancel</button>
+  </form>
+</div>

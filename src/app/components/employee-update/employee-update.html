@@ -1,1 +1,13 @@
-<p>employee-update works!</p>
+<div class="form-container">
+  <h3>Update Employee</h3>
+  <form (ngSubmit)="update.emit(emp)">
+    <label>Name: <input [(ngModel)]="emp.name" name="name" required></label><br>
+    <label>Department:
+      <select [(ngModel)]="emp.departmentId" name="departmentId" required>
+        <option *ngFor="let d of departments" [value]="d.departmentId">{{ d.department }}</option>
+      </select>
+    </label><br>
+    <button type="submit">Update</button>
+    <button type="button" (click)="cancel.emit()">Cancel</button>
+  </form>
+</div>
