@@ -22,12 +22,12 @@ export class RestService {
   }
 
   async getEmployees(): Promise<Employee[]> {
-    await this.delay(1000);
+    await this.delay(3000);
     return [...this.employees];
   }
 
   async addEmployee(emp: Employee): Promise<void> {
-    await this.delay(5000);
+    await this.delay(300);
     this.employees.push(emp);
   }
 
@@ -44,7 +44,7 @@ export class RestService {
   }
 
   async getDepartments(): Promise<Department[]> {
-    await this.delay(300);
+    await this.delay(9000);
     return [...this.departments];
   }
 

@@ -33,8 +33,14 @@ export class EmployeeListComponent implements OnInit {
   }
 
   async loadData() {
-    this.employees = await this.restService.getEmployees();
-    this.departments = await this.restService.getDepartments();
+    // this.employees = await this.restService.getEmployees();
+    // this.departments = await this.restService.getDepartments();
+    const [emps, deps] = await Promise.all([
+      this.restService.getEmployees(),
+      this.restService.getDepartments()
+    ]);
+    this.employees = await emps;
+    this.departments = await deps;
   }
 
   startInsert() {
